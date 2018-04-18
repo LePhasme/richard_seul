@@ -62,6 +62,9 @@ function ask() {
             name: 'Déplacer les deux',
             value: 'both'
         }, {
+            name: 'Parcourir un cercle',
+            value: 'circle'
+        }, {
             name: 'Quitter',
             value: 'quit'
         }]
@@ -71,9 +74,10 @@ function ask() {
             case 'wheel':
             case 'verin':
             case 'both':
+            case 'circle':
                 console.log('Envoi de la commande...')
                 board.write('[' + answers.command + ']\r\n')
-                noReturnTimer = setTimeout(noReturn, 30 * 1000) // On attend un retour pendant 30 secondes max...
+                noReturnTimer = setTimeout(noReturn, 60 * 1000) // On attend un retour pendant 60 secondes max...
                 break
             case 'quit':
                 console.log('Bye.')

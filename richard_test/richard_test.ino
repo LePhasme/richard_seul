@@ -38,6 +38,11 @@ int pinVerin = 5; // Pin du vérin sur la carte : à changer pour le bon...
 String fromSerial0 = "";
 int indexStart0;
 int indexEnd0;
+const float pi = 3.14159;
+
+// Pas vraiment documenté, à changer pour régler le déplacement en cercle :
+const int speedMMPS = 10;
+const float omega = 1.0;
 
 void setup() {
   // Setup OmniWheel :
@@ -71,6 +76,12 @@ void loop() {
           } else if (fromSerial0.indexOf("both") != -1) {
             moveVerin();
             moveOmni();
+            Serial.print("[ok]");
+          } else if (fromSerial0.indexOf("circle") != -1) {
+            for (float rad = 0.0; rad < 2 * pi; rad += 0.01) {
+              Omni.setCarMove(speedMMPS, rad, omega);
+              delay(10);
+            }
             Serial.print("[ok]");
           }
           fromSerial0 = "";
