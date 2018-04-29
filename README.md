@@ -16,3 +16,7 @@ Test préliminaire...
 1. Toujours avec le terminal, aller dans le dossier `richard_seul_test` et exécuter la commande : `npm install`
 1. Puis exécuter la commande :	`node test`
 1. Suivre les instructions et voir ce qui se passe...
+
+## TODO
+
+- Tester la méthode `Omni.setCarMove(speedMMPS, rad, omega)` qui devrait être celle sur laquelle repose l'essentiel des déplacements, en mappant les paramètres `speedMMPS`, `rad` et `omega` avec le vecteur `xz` fourni par l'application archivée dans https://github.com/LePhasme/richard_seul_tracker. 
